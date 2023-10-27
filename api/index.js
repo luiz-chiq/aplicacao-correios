@@ -7,7 +7,8 @@ const routes = require('./routes')
 const port = 3000;
 
 const app = express()
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api-docs', swaggerUi.serve)
+app.get('/api-docs', swaggerUi.setup(specs))
 routes(app)
 
 app.listen(3000, () => {
